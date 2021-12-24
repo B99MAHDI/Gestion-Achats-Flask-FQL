@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Mon compte</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+<style>
+
+#pimg:hover{
+  transform: scale(1.3);
+  transition: 0.4s ; 
+}
+input[type=text],input[type=email],input[type=password]{
+  width: 60%;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+}
+form{
+  padding-top: 5%;
+  padding-left: 20%;
+  padding-right: 10%;
+}
+
+
+
+body{
+  background: #654ea3;
+    background: -webkit-linear-gradient(to right, #8c6edd, #ff93c0);
+    background: linear-gradient(to right, #8c6edd, #ff93c0);
+
+}
+.copyright{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    display: inline-block;
+    padding: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-top: 1px solid #c8c8c8;
+}
+footer{
+    text-align:center;
+}
+#save{
+  margin-bottom: 5%;
+}
+#prm{
+  margin-bottom: 5%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.container {
+  padding-right:20%;
+  padding-left:20%;
+
+}
+</style>
+  
+  </head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+  
+ 
+
+<div class="bg-white shadow overflow-hidden">
+    <div class="px-4 pt-0 pb-4 bg-dark">
+        <div class="media align-items-end profile-header">
+          <form method="POST">
+          <a href="#" width="100%" height="350"><img id="pimg" name="image" value="" src="{{ url_for('static',filename='profile.png') }}" alt="..." width="120" class="rounded mb-2 img-thumbnail" ></a>
+          </form>
+        </div>
+    </div>
+</div>
+<br/>
+
+{% if error %}
+<div class="container">
+<div class="alert alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  Attention : {{ error }}
+</div>
+</div>
+{% elif message %}
+<div class="container">
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ message }}
+  </div>
+  </div>
+{% endif %}
+
+
+
+<form method="POST" action="{{url_for('account_up',id=id,name=name)}}">
+    <legend><h4><b><U>Vos coordonnées</U></b></h4></legend> 
+    <div class="container-fluid">
+      <div class="row mb-6">
+        <div class="col">     
+            <label><b>Nom :</b></label>
+            <input type="text" class="form-control" placeholder="Votre Nom" name="nom" value="{{ mlname }}" >
+        </div>
+        <div class="col">
+            <label id="prenom"><b>Prénom :</b></label>
+            <input id="prenom" type="text" class="form-control" placeholder="Votre Prénom" name="prenom" value="{{ name }}" ><br>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col" style="margin-left:20%;margin-right:20%;">
+            <label><b>Email :</b></label>
+            <input type="email" class="form-control" placeholder="Votre Email" name="email" value="{{ myemail }}" >
+        </div>
+      </div>
+  
+
+<hr class="block 2px black">
+
+  <div class="form-row">
+    <div class="col">
+      <label id="mdp"><b>Mot de passe :</b></label>
+      <input id="mdp" type="password" class="form-control" placeholder="Votre mot de passe" name="mdp" value="{{ mypssd }}" >
+    </div>
+    <div class="col">
+      <label id="mdp"><b>Confirmer le Mot de passe :</b></label>
+      <input id="mdp" type="password" class="form-control" placeholder="Confirmez votre mot de passe." name="re_mdp" value="{{ request.form.re_mdp }}" >
+    </div>
+  </div>
+</div>
+<hr class="block 2px black">
+
+<button id="save" type="submit" class="btn btn-primary" btn-lg btn-block>Enregistrer</button>
+</form>
+
+
+<a href="{{url_for('parametrage',id=id,name=name)}}" target="_blank" ><button id="prm" type="button" class="btn btn-success" btn-lg btn-block>Paramétrage de l'application</button></a>
+
+<footer>
+  <div class="copyright">
+  Copyright © 2021 | Realisé par <strong>BAHOU El Mahdi</strong> &amp; Encadré par <strong>Mr MOUHAJIRI Ayoub. | PROMETI.</strong>
+  </div>
+</footer>
+
+</body>
+</html>

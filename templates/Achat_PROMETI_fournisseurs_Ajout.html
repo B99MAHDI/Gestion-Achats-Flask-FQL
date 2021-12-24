@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Achat_PROMETI_fournisseurs_Ajout</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+input[type=text], input[type=email],input[type=number]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid #ccc;
+}
+p{
+    text-align: center;
+}
+
+.txt{
+    text-align: center;
+    background-color: rgb(247, 224, 255);
+}
+
+ul li:hover{
+    background-color: rgb(153, 153, 153);
+    border-radius: 0.5em;
+    box-shadow: #ffffff;
+    font-weight: bolder;
+}
+ul li{
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 0px #37004d;
+    font-weight: bolder;
+    background-color: #525252;
+    margin-right: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+  border-radius: 1em;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+.savebtn{
+  width: auto;
+  padding: 10px 22px;
+  float: right;
+  background-color: #5936f4;
+  border-radius: 1em;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+form{
+    border: 3px solid #131212;
+    margin-left: 22%;
+    margin-right: 25%;
+    margin-bottom: 40px;
+    border-color: rgb(152, 118, 202);
+    border-radius: 1em;
+    background-color: #ffffff;
+}
+body {
+    background: #8976bd;
+    background: -webkit-linear-gradient(to top, #8976bd, #ffb8d5);
+    background: linear-gradient(to top, #8976bd, #ffb8d5);
+    min-height: 100vh;
+}
+.container {    
+padding: 5%;
+}
+
+.container1 {    
+padding-left: 10%;
+padding-right: 10%;
+border-bottom-left-radius: 1em;
+border-bottom-right-radius: 1em;
+}
+nav{
+    margin-bottom:4%;
+}
+.col-size {
+  width: 100%;
+  padding: 2% 0 0 0 ;
+  border-top-left-radius: 0.75em;
+  border-top-right-radius: 0.75em;
+  background: linear-gradient(50deg, rgb(214, 164, 255), rgb(196, 124, 255), rgb(183, 95, 255), rgb(170, 94, 231),rgb(199, 78, 255),rgb(121, 31, 163),rgb(91, 15, 126));
+}
+.copyright{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    display: inline-block;
+    padding: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-top: 1px solid #c8c8c8;
+}
+footer{
+    text-align:center;
+}
+
+</style>  
+
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand">
+      <img src="{{url_for('static',filename='logo_prmt.png')}}" alt="Logo" style="width:40px;"></a>
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('profile',id=id,name=name)}}">Profile</a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fournisseurs</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="{{url_for('data1',id=id,name=name,page=1)}}">Afficher toutes les Données</a>
+                <a class="dropdown-item" href="{{url_for('suppliersadd',id=id,name=name)}}">Ajouter un fournisseur</a> 
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Articles</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="{{url_for('artcldb',id=id,name=name)}}">Afficher toutes les Bases De Données</a>
+                <a class="dropdown-item" href="{{url_for('ajoutartcl',id=id,name=name)}}">Ajouter un Article<span class="sr-only">(current)</span></a> 
+            </div>
+          </li>
+          <a href="/logout"><button style="position:absolute; margin-left:60%;" id="logout" onclick="return confirm('Etes-vous sûr de vouloir quitter la session ?')" class="btn btn-outline-danger">Déconnexion</button></a>
+    </ul>
+</nav> 
+<form class="txt">
+  <div class="col-size"></div>
+  <h5 style="padding-left: 0.5px;padding-right: 0.5px">Pour ajouter un nouveau fournisseur, veuillez remplir le formulaire suivant:
+  <p style="color: red;">*Tous les champs sont oligatoires*</p></h5>
+  </form>
+
+<form method="post">
+    <div class="col-size"></div>
+    <div class="container">
+        <h5> <label for="ctnum">CT_Num :</label></h5>
+        <input type="text" placeholder="Entrer Le CT_Num" name="ctnum" value="{{request.form.ctnum}}" required>
+    
+        <h5> <label for="dldesign">DL_Design :</label> </h5>
+        <input type="text" placeholder="Entrer Le DL_Design" name="dldesign" value="{{request.form.dldesign}}" required>
+
+        <h5> <label for="prixunitaire">Prix Unitaire :</label> </h5>
+        <input type="number" placeholder="Entrer Le Prix Unitaire" name="prixunitaire" value="{{request.form.prixunitaire}}" required>
+
+        <h5> <label for="commerciale">Commerciale :</label> </h5>
+        <input type="text" placeholder="Entrer Le Nom et le Prenom du commerciale" name="commerciale" value="{{request.form.commerciale}}" required>
+
+        <h5> <label for="numtel">Numéro du Télèphone :</label> </h5>
+        <input type="text" placeholder="Entrer Le Numéro du Télèphone" name="numtel" value="{{request.form.numtel}}" required>
+        <h5> <label for="email">Adresse Email :</label> </h5>
+        <input type="email" placeholder="Entrer L'adresse Email du Commerciale" name="email" value="{{request.form.email}}" required>
+    </div>
+
+<div class="container1" style="background-color : rgb(255, 255, 255)">
+    <span >
+    <a href=""><button type="button" class="cancelbtn">Cancel</button></a>
+    <a href=""><button type="submit" class="savebtn">Save</button></a>
+    </span>
+</form>
+</div>
+<footer>
+  <div class="copyright">
+  Copyright © 2021 | Realisé par <strong>BAHOU El Mahdi</strong> &amp; Encadré par <strong>Mr MOUHAJIRI Ayoub. | PROMETI.</strong>
+  </div>
+</footer>
+</body>
+</html>

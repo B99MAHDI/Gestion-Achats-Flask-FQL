@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Application_en_maintenance</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+<style>
+input[type=text],input[type=email],input[type=password],textarea{
+  width: 60%;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+}
+form{
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+
+body {
+    background: #654ea3;
+    background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);
+    background: linear-gradient(to right, #654ea3, #eaafc8);
+    min-height: 100vh;
+}
+.copyright{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    display: inline-block;
+    padding: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-top: 1px solid #c8c8c8;
+}
+footer{
+    margin-top: -3%;
+    text-align:center;
+}
+#save{
+  margin-bottom: 5%;
+}
+h3{
+    margin-top:3%;
+    text-align: center;
+}
+
+
+#activer{
+    height:10%;
+    float: right;
+}
+</style>
+
+</head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+
+
+<h3><U><b>Bienvenue Mensieur Admin</b></U></h3>
+<form method="POST" action="">
+    <legend><h4><b><U>Les coordonnées de l'application</U></b></h4></legend> 
+    <div class="container-fluid">
+
+        <div class="row mb-6">
+            <div class="col">     
+                <label><b>Nom de l'application :</b></label>
+                <input type="text" class="form-control" placeholder="Nom de l'application" name="nom" value="{{nom}}" required>
+            </div>
+
+            <div class="col">
+                <label id=""><b>Description de l'application :</b></label>
+                <textarea id="" class="form-control" placeholder="Description" name="desc" value="">{{desc}}</textarea><br>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+                <label><b>Email de l'application :</b></label>
+                <input type="email" class="form-control" placeholder="Votre Email" name="app_email" value="{{app_email}}">
+            </div>
+
+            <div class="col">
+                <label id=""><b>Adresse :</b></label>
+                <textarea id="" type="textarea" class="form-control" placeholder="Adresse" name="adress" value="">{{adress}}</textarea><br>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+                <label id=""><b>Clé secréte :</b></label>
+                <div style="display: block;">
+                    <input id="" type="password" class="form-control" placeholder="Clé secréte" title="Attention : la Clé secréte doit être complexe pour plus de sécurité." name="secret_key" value="{{secret_key}}" required ><br>
+                    <button id="btn" class="btn btn-dark">Générer un code</button>
+                </div>
+            </div>
+
+            <div class="col">
+                <input type="checkbox" name="en_maintenance" id="" value="0" autocomplete="off"> En Maintenance
+            </div>
+        </div>
+        <a href=""><button id="activer" type="button" onclick="return confirm('Êtes vous sûr de vouloir activer le mode en maintenance ?')" class="btn btn-danger" btn-lg btn-block>Activer le mode (En Maintenance)</button></a>
+    </div>
+
+<hr class="block 2px black">
+<button id="save" type="submit" class="btn btn-primary" btn-lg btn-block>Enregistrer</button>
+</form>
+
+
+<footer>
+    <div class="copyright">
+    Copyright © 2021 | Realisé par <strong>BAHOU El Mahdi</strong> &amp; Encadré par <strong>Mr MOUHAJIRI Ayoub. | PROMETI.</strong>
+    </div>
+</footer>
+
+</body>
+</html>

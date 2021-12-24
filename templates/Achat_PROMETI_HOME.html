@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Achat_PROMETI_Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+
+ul li:hover{
+    background-color: rgb(153, 153, 153);
+    border-radius: 0.5em;
+    box-shadow: #ffffff;
+    font-weight: bolder;
+}
+ul li{
+    display: inline-block;
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 0px #37004d;
+    font-weight: bolder;
+    padding: -3px;
+    background-color: #525252;
+    margin-right: 5px;
+}
+ul li dropdown{
+    border: black solid;
+}
+h2{
+    color:rgb(27, 26, 34);
+    margin-right: 30%;
+}
+.glow{
+    animation: glow 1s ease-in-out infinite alternate;
+    margin-left: 40%;
+    margin-top: -10%;
+}
+
+.dropdown-menu{
+    border-color: black solid;
+}
+@keyframes glow {
+    from {
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 4px #80a9df, 0 0 5px #80a9df, 0 0 6px #80a9df, 0 0 7px #80a9df, 0 0 8px #80a9df;
+  }
+  
+  to {
+    text-shadow: 0 0 4px #fff, 0 0 5px #e49fff, 0 0 6px #d177f5, 0 0 7px #b43ae4, 0 0 8px #8e35b1, 0 0 9px #723988, 0 0 10px #612b77;
+  }
+}
+
+#bg{
+    margin-right: 100%;
+    border-radius: 0.75em;
+}
+.container-fluid{
+    margin-top: -7%;
+}
+form{
+  border: 3px solid #131212;
+  margin-left: 22%;
+  margin-right: 22%;
+  margin-bottom: 40px;
+  border-color: rgb(0, 0, 0);
+  border-radius: 1em;
+}
+
+#bgimg{
+    height: 519px;
+    width : 1300px;
+}
+#opc{
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+#logbtn{
+    width:auto;
+    margin-right: -100%;
+    margin-left: 5%;
+    background-color: #525252;
+}
+#logbtn:hover{
+    background-color: #076cf1;
+}
+
+.copyright{
+    color: rgb(146, 146, 146);
+    font-size: 14px;
+    display: inline-block;
+    padding: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-top: 1px solid #c8c8c8;
+}
+footer{
+    text-align:center;
+}
+</style>  
+    </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<div>
+    <div class ="container-fluid">
+        <img src="{{url_for('static',filename='4.png')}}" alt="PROMETI" width="500" height="250">
+        <h2 class="glow"><b>Gérer facilement votre Base de données d'Achat</b></h2>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand">
+        <img src="{{url_for('static',filename='logo_prmt.png')}}" alt="Logo" style="width:40px;"></a>
+        <ul class="navbar-nav">
+            <li>
+            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li id="logbtn">
+                <a class="nav-link" href="/Achat PROMETI_Login">Se Connecter</a>
+            </li>
+        </ul>
+</nav> 
+<div>
+<img id="bgimg" src="{{url_for('static',filename='WKbQMt.png')}}" alt="bgimg">
+</div>
+<footer>
+    <div class="copyright">
+    Copyright © 2021 | Realisé par <strong>BAHOU El Mahdi</strong> &amp; Encadré par <strong>Mr MOUHAJIRI Ayoub. | PROMETI.</strong>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Achat PROMETI_Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+}
+#bg{
+  background-size: cover;
+  height:200px;
+  margin-bottom:3%;
+}
+#Mydiv { 
+  background-color:rgba(0, 0, 0, 0.5);
+  height:200px;
+  }
+.display-2{
+  text-shadow: #ffffff;
+  text-align : center;
+  height:200px;
+  color:rgb(255, 255, 255);
+}
+.glow{
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #5356f0, 0 0 30px #5356f0, 0 0 40px #5356f0, 0 0 50px #5356f0, 0 0 60px #5356f0;
+  }
+  
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #6062e6, 0 0 30px #4b4dd1, 0 0 30px #8c00ff, 0 0 30px #3234c4, 0 0 40px #744e94, 0 0 50px #3536a1;
+  }
+}
+
+
+#button {
+  background: #654ea3;
+  background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);
+  background: linear-gradient(to right, #654ea3, #eaafc8);
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  width: 50%;
+  border-radius: 1em;
+  margin-left:25%;
+  margin-right:25%;
+  font-size:18px;
+}
+
+
+#demo {
+  text-align : center;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+  border-radius: 1em;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  border-radius: 1em;
+}
+
+form{
+  border: 3px solid #ffffff;
+  margin-left: 32%;
+  margin-right: 32%;
+  margin-bottom: 35px;
+  border-color: rgb(152, 118, 202);
+  border-radius: 1em;
+  background-color: rgb(255, 255, 255);
+}
+
+.container1{
+  padding-left: 20px;
+  padding-right:20px;
+  padding-top:2px;
+  padding-bottom:20px;
+}
+
+
+span.psw{
+  width: auto;
+  float: right;
+  margin-top:2% ;
+}
+#erreur{
+  color:red ;  
+  text-align:center;
+}
+
+.col-size {
+  width: 100%;
+  padding: 2% 0 0 0 ;
+  border-top-left-radius: 0.75em;
+  border-top-right-radius: 0.75em;
+  background: linear-gradient(50deg, rgb(214, 164, 255), rgb(196, 124, 255), rgb(183, 95, 255), rgb(170, 94, 231),rgb(199, 78, 255),rgb(121, 31, 163),rgb(91, 15, 126));
+}
+
+#login{
+  background-color: #e7cbff;
+text-align: center;
+}
+i{
+  padding: 2px 8px 0 0;
+}
+body{
+  background: #654ea3;
+    background: -webkit-linear-gradient(to right, #8c6edd, #ff93c0);
+    background: linear-gradient(to right, #8c6edd, #ff93c0);
+
+}
+.copyright{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    display: inline-block;
+    padding: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-top: 1px solid #c8c8c8;
+}
+footer{
+    text-align:center;
+}
+</style>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<div id="bg" style="background-image:url(/static/3.png) ;">
+  <div id="Mydiv">
+    <h1 class="display-2">
+    <b><b>Achat</b> <p1 class="glow"><b>PROMETI</b></p1></b></h1><br>
+  </div>
+</div>
+<form action="" method="post" autocomplete="off">
+  <div class="col-size"></div>
+<div id="login"><b><h2>Authentification</h2></b><hr></div>
+  <div class="container1">
+    <h5> <label for="username"><b>Username :</b><i class="fas fa-lock"></i></label> </h5>
+    <input  type="text" placeholder="Enter Username" name="username" value="{{ request.form.username }}"> 
+
+    <h5> <label for="password"><b>Password :</b><i class="fas fa-lock"></i></label> </h5>
+    <input type="password" placeholder="Enter Password" name="password" value="{{ request.form.password }}">  
+    <label><input type="checkbox" name="rememberme" value="{{ request.form.getlist.rememberme }}"> Remember me</label><br>
+    <button id="button" type="submit">Se Connecter</button>   
+
+{% if error %}
+  <div class="container">
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ error }}
+    </div>
+  </div>
+{% endif %}
+
+</div>
+</form>
+
+<footer>
+  <div class="copyright">
+  Copyright © 2021 | Realisé par <strong>BAHOU El Mahdi</strong> &amp; Encadré par <strong>Mr MOUHAJIRI Ayoub. | PROMETI.</strong>
+  </div>
+</footer>
+
+</body>
+</html>
